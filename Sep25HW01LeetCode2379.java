@@ -46,29 +46,32 @@ public class Sep25HW01LeetCode2379_SlidingWindow {
 		
 	}
 	public int isBlackBlockConsecutive(String blocks, int k) {
-		  {
-	  int minCount = Integer.MAX_VALUE;
-	  int wCount =0,start =0, end = k-1;
-	  
-	  while(end<blocks.length())
-	  {
-		  wCount =0;
-		  for (int i = start;  i <= end; i++) {
-			  
-			  if(blocks.charAt(i)=='W')
-			  {
-				  wCount++;
-			  }
-			  
-		    }
-		  minCount= Math.min(minCount, wCount);
-		  start++;
-		  end++;
-	  }
-	   
-	  
-	  return minCount;
-        
-    }
+		int whiteblock = 0;
+		int end = k-1;
+		int minPaint=Integer.MAX_VALUE;
+		if(blocks.length()==1)
+		{
+			if(blocks.charAt(0)=='W') {
+				return 1;
+			}
+			else return 0;
+		}
+		else {
+			for(int i=0;i<=blocks.length()-k;i++) //1
+			{
+				for (int j=i;j<=i+end;j++){ //1
+					if(blocks.charAt(j)=='W')
+					{
+						whiteblock++;
+					}
+					
+				}
+				minPaint = Math.min(minPaint,whiteblock);
+				whiteblock=0;
+			}
+			return minPaint;
+		
+		}
+	}
 	
 }
