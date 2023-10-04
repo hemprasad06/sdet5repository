@@ -73,8 +73,3 @@ public void test3() {
 			}
 		}
 	}
-				
-			
-		
-	
-
