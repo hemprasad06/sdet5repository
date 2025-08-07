@@ -25,7 +25,7 @@ public void test1() {
 	}
 @Test
 public void test2() {
-	int[] input = {1,3,2,4,0,5,6,7,8,9,11,12};
+	int[] input = {1,3,2,4,0,5,6,7,8,9,12,11};
 	int[] actualResult = arryByParity(input);
 	//Object[] actualResult1 = actualResult.toArray();
 	int[] expected = {12,8,2,4,0,6,5,7,3,9,11,1};
